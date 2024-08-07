@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hiking-trails"
+version = "0.1.0"
+description = "App to track closed hiking trails"
+authors = ["Bruno Faigle-Cedzich"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.0"
+uvicorn = "^0.30.5"
+sqlalchemy = "^2.0.32"
+python-multipart = "^0.0.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
