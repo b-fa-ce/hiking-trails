@@ -36,5 +36,4 @@ jobs:
       run: cd ./src/backend && poetry install
 
     - name: Run pylint
-      run: |
-        poetry run pylint $(git ls-files '*.py')
+      run: cd ./src/backend && poetry run pylint $(git ls-files '*.py')
