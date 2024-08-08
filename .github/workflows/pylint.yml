@@ -33,7 +33,7 @@ jobs:
         echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Install dependencies
-      run: poetry install
+      run: cd ./src/backend && poetry install
 
     - name: Run pylint
       run: |
