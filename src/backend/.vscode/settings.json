@@ -1,0 +1,9 @@
+{
+  "python.linting.pylintArgs": [
+    "--init-hook",
+    "import sys; sys.path.append('.venv/lib/pythonX.X/site-packages')"
+  ],
+  "python.analysis.extraPaths": [
+    "./.venv/lib/pythonX.X/site-packages"
+  ]
+}

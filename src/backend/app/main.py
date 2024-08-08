@@ -1,9 +1,8 @@
-from fastapi import FastAPI, File, UploadFile, Form, Depends
+from fastapi import FastAPI, File, UploadFile, Form
 import os
 from db.database import SessionLocal
 import shutil
 import uvicorn
-
 
 app = FastAPI()
 
@@ -22,7 +21,7 @@ def get_db():
 
 # Define a root `/` endpoint
 @app.get('/')
-def index():
+async def index():
     return {'ok': True}
 
 # Define a POST `/uploadGPX` endpoint
