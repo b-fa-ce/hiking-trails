@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Form, Depends
 import os
-from database import SessionLocal
+from db.database import SessionLocal
 import shutil
 import uvicorn
 
