@@ -1,3 +1,7 @@
+"""
+Test file
+"""
+
 import pytest
 from starlette.testclient import TestClient
 
@@ -13,7 +17,7 @@ def test_app():
     yield client
 
 
-def test_index(test_app):
+def test_index(test_app):  # pylint: disable=W0621
     """
     test / route
     """

@@ -1,3 +1,7 @@
+"""
+Main workflow
+"""
+
 import os
 import shutil
 
