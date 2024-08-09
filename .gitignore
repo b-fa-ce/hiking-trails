@@ -11,3 +11,10 @@
 
 #!.yarn/cache
 .pnp.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*/.coverage/
