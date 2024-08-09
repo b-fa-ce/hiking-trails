@@ -38,7 +38,7 @@ jobs:
 
 
     - name: Run tests with coverage
-      run:  cd ./src/backend && coverage run -m pytest && coverage report
+      run:  cd ./src/backend && poetry run coverage run -m pytest
 
     - name: Check coverage threshold
-      run: cd ./src/backend && coverage report --fail-under=50
+      run: cd ./src/backend && poetry run coverage report --fail-under=50
