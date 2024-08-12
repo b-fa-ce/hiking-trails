@@ -1,20 +1,14 @@
 """
-Main workflow
+Main workflow for the FastAPI application
 """
 
-import os
-import shutil
-
 import uvicorn
-from fastapi import FastAPI, File, Form, UploadFile
+from fastapi import FastAPI
 from db.database import SessionLocal
 
-app = FastAPI()
+from app.api import index, uploadGPX
 
-# TODO move to env
-UPLOAD_FOLDER = "uploads"
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+app = FastAPI()
 
 
 # Dependency to get DB session
@@ -30,30 +24,11 @@ def get_db():
 
 
 # Define a root `/` endpoint
-@app.get("/")
-async def index():
-    """
-    returns {'ok': True} if running
-    """
-    return {"ok": True}
+app.include_router(index.router)
 
 
 # Define a POST `/uploadGPX` endpoint
-@app.post("uploadGPX")
-async def upload_file(
-    file: UploadFile = File(...),
-    valid_until: str = Form(None),
-    # TODO db: add database session here
-) -> None:
-    """
-    POST upload gpx route
-    """
-    # TODO: file verification
-    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
-    return valid_until
+app.include_router(uploadGPX.router)
 
 
 if __name__ == "__main__":

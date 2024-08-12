@@ -17,7 +17,7 @@ def test_app():
     yield client
 
 
-def test_index(test_app):  # pylint: disable=W0621
+def test_index(test_app):
     """
     test / route
     """
