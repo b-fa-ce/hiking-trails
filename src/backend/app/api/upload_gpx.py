@@ -1,3 +1,7 @@
+"""
+API POST route for uploading GPX file
+"""
+
 import os
 import shutil
 from fastapi import APIRouter, File, Form, UploadFile
@@ -9,7 +13,7 @@ UPLOAD_FOLDER = "uploads"
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-    
+
 @router.post("uploadGPX")
 async def upload_file(
     file: UploadFile = File(...),

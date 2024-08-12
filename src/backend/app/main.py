@@ -6,7 +6,9 @@ import uvicorn
 from fastapi import FastAPI
 from db.database import SessionLocal
 
-from app.api import index, uploadGPX
+from app.api import index
+from app.api import upload_gpx
+
 
 app = FastAPI()
 
@@ -28,7 +30,7 @@ app.include_router(index.router)
 
 
 # Define a POST `/uploadGPX` endpoint
-app.include_router(uploadGPX.router)
+app.include_router(upload_gpx.router)
 
 
 if __name__ == "__main__":

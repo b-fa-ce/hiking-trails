@@ -1,3 +1,7 @@
+"""
+GET / - returns {'ok': True} if running
+"""
+
 from fastapi import APIRouter
 
 router = APIRouter()
